@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Footer from "./layouts/Footer";
+import Header from "./layouts/Header";
+import { Toaster } from "react-hot-toast";
+import Routing from "./layouts/Routing";
+import ModalManger from "./utils/ModalManger";
+import { useSelector } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 function App() {
+  const { isOpen } = useSelector((state) => state.modalSlice);
+  if (isOpen) {
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "scroll";
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Toaster position="top-center" />
+      <Header />
+      <ModalManger />
+      <Routing />
+      <Footer />
+    </BrowserRouter>
   );
 }
 
