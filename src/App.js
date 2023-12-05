@@ -1,6 +1,6 @@
 import Footer from "./layouts/Footer";
-import Header from "./layouts/Header";
-import { Toaster } from "react-hot-toast";
+import Header from "./layouts/header/Header";
+import { Toast } from "./utils/Toast";
 import Routing from "./layouts/Routing";
 import ModalManger from "./utils/ModalManger";
 import { useSelector } from "react-redux";
@@ -14,7 +14,7 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <Toaster position="top-center" />
+      <Toast />
       <Header />
       <ModalManger />
       <Routing />

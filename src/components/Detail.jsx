@@ -1,6 +1,7 @@
 import { FavBooks, DeleteBook } from "../store/BookSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { FavBtn } from "../components/TabBtn";
+import { FavBtn } from "../pages/Home/TabBtn";
+import { sucess, failed } from "../utils/Toast";
 const Detail = (Book) => {
   const { book } = Book;
   const dispatch = useDispatch();
@@ -8,21 +9,22 @@ const Detail = (Book) => {
   const isBookInList = list.some((favBook) => favBook.id === book.id);
   const handleFav = () => {
     dispatch(FavBooks(book));
+    sucess("Book added to your Favorite List");
   };
   const handleDelete = () => {
     dispatch(DeleteBook(book.id));
+    failed("Book removed From Favorite List ");
   };
   const thumbnail =
     book?.volumeInfo?.imageLinks?.thumbnail ||
     book?.volumeInfo?.imageLinks?.smallThumbnail ||
     "fallback-image-url";
-
   return (
     <div
-      className="lg:mx-10 lg:pt-4 relative flex flex-col rounded-xl bg-white shadow-2xl shadow-neutral-300 
+      className="lg:mx-10 lg:pt-4 flex flex-col rounded-xl bg-white shadow-2xl shadow-neutral-300 
       "
     >
-      <div className="relative mx-auto font-second lg:grid lg:grid-col-1 flex flex-col-reverse lg:grid-cols-4 gap-x-10  w-full p-6 lg:mb-5 ">
+      <div className=" mx-auto  lg:grid lg:grid-col-1 flex flex-col-reverse lg:grid-cols-4 gap-x-10  w-full p-6 lg:mb-5 ">
         <div className="flex flex-col col-span-3 pt-2">
           <h5 className="mb-2 text-2xl font-medium leading-snug tracking-widest ">
             <span className=" border-b-2 font-semibold">Title : </span>{" "}
@@ -42,15 +44,15 @@ const Detail = (Book) => {
               "
               {book
                 ? book.volumeInfo.description.slice(0, 300)
-                : book.searchInfo.textSnippet.slice(0, 3000)}
+                : book.searchInfo.textSnippet.slice(0, 300)}
               "
             </p>
             <p className="text-base">
-              <span className="text-xl font-bold   p-[2px]"> publisher :</span>{" "}
+              <span className="text-xl font-bold p-[2px]"> publisher :</span>{" "}
               {book.volumeInfo.publisher}
             </p>
-            <p className="text-base">
-              <span className="text-xl font-bold   p-[2px]"> Page Count :</span>
+            <p className="text-lg">
+              <span className="text-xl font-bold p-[2px]"> Page Count : </span>
               {book.volumeInfo.pageCount}
             </p>
             <span className="centerd gap-x-4 ">
@@ -66,7 +68,6 @@ const Detail = (Book) => {
             </span>
           </div>
         </div>
-
         <div className="h-[250px] w-[200px] col-span-1 overflow-hidden rounded-md shadow-lg shadow-[#777]">
           <img
             src={thumbnail}

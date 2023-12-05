@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import modalSlice from "./modalSlice";
 import BookSlice from "./BookSlice";
+import userSlice from "./authSlice";
 
-export default configureStore({
-  reducer: { modalSlice, BookSlice },
+const store = configureStore({
+  reducer: { modalSlice, BookSlice, userSlice },
 });
+export default store;

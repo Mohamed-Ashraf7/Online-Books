@@ -5,7 +5,6 @@ module.exports = {
     extend: {
       colors: {
         primary: "#1769aa",
-        
       },
       screens: {
         mobile: {
@@ -13,9 +12,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        primary: ["Agbalumo", "sans"],
-        second: ["Playfair Display"],
-        third: ["IBM Plex Sans"],
+        primary: ["Playfair"],
       },
     },
   },

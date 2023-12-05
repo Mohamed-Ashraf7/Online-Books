@@ -1,16 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { instance} from "../utils/API";
+import { instance } from "../utils/API";
 
 export const fetchBooks = createAsyncThunk(
   "books/fetchBooks",
   async (query, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
     try {
       const response = await instance.get(
         `?q=${query}&orderBy=newest&maxResults=30`
       );
       return response.data;
     } catch (error) {
-      throw error;
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -29,7 +30,7 @@ const initialState = {
 
 const bookSlice = createSlice({
   name: "books",
-  initialState, 
+  initialState,
   reducers: {
     handleTab: (state, action) => {
       state.activeTab = action.payload;

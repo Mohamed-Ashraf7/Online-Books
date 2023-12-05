@@ -1,9 +1,10 @@
 import { lazy, Suspense } from "react";
-import Content from "../pages/Content";
+import Content from "../pages/Home/Content";
 import { Routes, Route } from "react-router-dom";
 import Loader from "../components/Loader";
-const About = lazy(() => import("../pages/About"));
-const FavList = lazy(() => import("../pages/FavList"));
+const About = lazy(() => import("../pages/about/About"));
+const FavList = lazy(() => import("../pages/FavList/FavList"));
+
 const Routing = () => {
   return (
     <Suspense fallback={<Loader />}>

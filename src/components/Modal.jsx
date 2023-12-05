@@ -5,7 +5,7 @@ const Modal = ({ handle, children, isOpen }) => {
     <Fragment>
       {isOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-50 w-full min-h-full p-4 overflow-x-hidden overflow-y-auto md:inset-0  bg-neutral-900 bg-opacity-80 centerd">
-          <div className="relative w-full max-w-5xl max-h-full  bg-white rounded-lg shadow">
+          <div className="relative   w-full max-w-5xl max-h-full  bg-white rounded-lg shadow">
             <button
               onClick={handle}
               type="button"
@@ -13,7 +13,7 @@ const Modal = ({ handle, children, isOpen }) => {
             >
               <AiOutlineClose size={30} />
             </button>
-            <div className="centerd py-14">{children}</div>
+            <div className="centerd py-12 md:pt-10">{children}</div>
           </div>
         </div>
       )}

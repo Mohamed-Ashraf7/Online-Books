@@ -6,3 +6,10 @@ export const instance = axios.create({
     Authorization: "AIzaSyD4EgZlrmm9hLwSbhoQS4IeJB-aK7Vzeuc",
   },
 });
+
+export const Auther = axios.create({
+  baseURL: "https://apingweb.com/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});

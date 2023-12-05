@@ -3,7 +3,7 @@ import React from "react";
 const Loader = () => {
   const load = (
     <div
-      className="relative w-full flex flex-col rounded-xl bg-[#fefefe] shadow-2xl shadow-neutral-300
+      className="relative w-full  flex flex-col rounded-xl bg-[#fefefe] shadow-2xl shadow-neutral-300
         "
     >
       <div className="relative mx-auto bg-white -mt-10 h-[220px] w-[150px] overflow-hidden rounded-xl shadow-lg shadow-gray-500/40 ">
@@ -19,7 +19,7 @@ const Loader = () => {
     </div>
   );
   return (
-    <div className="w-full gap-x-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 items-center justify-center">
+    <div className="w-full h-full gap-x-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 items-center justify-center">
       {load}
       {load}
       <span className="hidden lg:block">{load}</span>
