@@ -13,10 +13,9 @@ const MenuIcon = ({ toggleMenu }) => {
     <div className="centerd mobile:flex-col gap-y-2 mobile:pb-4 lg:gap-x-4">
       <div className="group relative px-2 cursor-pointer ">
         <Link
-          to="/"
+          to="/" aria-label="Home"
           className={`icons mobile:shadow-none ${
-            activeLink === "/" && "ActiveLink"
-          }`}
+            activeLink === "/" && "ActiveLink"}`}
           onClick={() => handleLinkClick("/")}
         >
           <BiHomeAlt size={27} />
@@ -25,10 +24,9 @@ const MenuIcon = ({ toggleMenu }) => {
       </div>
       <div className="group relative px-2 cursor-pointer">
         <Link
-          to="/about"
+          to="/about" aria-label="About"
           className={`icons mobile:shadow-none ${
-            activeLink === "/about" && "ActiveLink"
-          }`}
+            activeLink === "/about" && "ActiveLink"}`}
           onClick={() => handleLinkClick("/about")}
         >
           <PiBookOpenTextThin size={27} />
@@ -37,10 +35,9 @@ const MenuIcon = ({ toggleMenu }) => {
       </div>
       <div className="group relative px-2 cursor-pointer">
         <Link
-          to="/FavList"
+          to="/FavList"  aria-label="Favorite"
           className={`icons mobile:shadow-none ${
-            activeLink === "/FavList" && "ActiveLink"
-          }`}
+            activeLink === "/FavList" && "ActiveLink"}`}
           onClick={() => handleLinkClick("/FavList")}
         >
           <CiBoxList size={27} />

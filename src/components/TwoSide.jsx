@@ -4,12 +4,11 @@ import { useDispatch } from "react-redux";
 const LoginRegister = () => {
   const dispatch = useDispatch();
   return (
-    <div className="centerd flex-col bg-[#EFE8FE] shadow-xl  w-fit p-8 py-14  border-2 rounded-xl">
+    <div className="centerd flex-col bg-[#e2e2e2] shadow-xl w-fit p-8 py-14 border-2 rounded-xl">
       <h4 className="py-3 text-xl">You must Login first !</h4>
-      <button
+      <button type="button" className="btn bg-[#3a3a3a]"
         onClick={() => dispatch(openModal({ name: "Login" }))}
-        className="btn bg-[#3a3a3a]"
-      >
+        >
         Log In
       </button>
       <div className="border-b-2 my-3 border-black  centerd">
@@ -17,8 +16,7 @@ const LoginRegister = () => {
           Don't have an Account?
         </span>
       </div>
-      <button
-        className="btn"
+      <button type="button"  className="btn"
         onClick={() => dispatch(openModal({ name: "Register" }))}
       >
         Create Account

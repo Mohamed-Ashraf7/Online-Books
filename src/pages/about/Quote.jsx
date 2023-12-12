@@ -2,65 +2,44 @@ import Img from "../../assets/AuthorYear.webp";
 import Section from "../../components/Section";
 import author from "../../assets/author.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { FaGithub, FaDribbble, FaTwitter, FaEnvelope } from "react-icons/fa";
+import Socials from "../../components/Socials";
 const Quote = () => {
   return (
     <Section className="px-6 py-2 mx-auto space-y-4 ">
-      <div className="p-5 mx-auto">
-        <div className="flex flex-col w-full mx-auto overflow-hidden">
+      <section className="p-5 mobile:pb-0 mx-auto">
+        <div className="flex flex-col mx-auto overflow-hidden">
           <LazyLoadImage
-            src={Img}
-            alt="QuoteBanner"
-            className="object-cover pb-20 w-full md:h-[350px]  "
-          />
-          <div className="p-6 m-1 mx-auto -mt-20 space-y-2 bg-white ">
-            <div className="space-y-2">
+            src={Img} alt="QuoteBanner"
+            className="object-cover mobile:pb-20 md:h-[350px]"/>
+          <div className="p-6 mobile:pb-2 mx-auto -mt-28 space-y-2 bg-white">
+            <div className="space-y-1">
               <span className="inline-block text-2xl font-semibold sm:text-3xl">
                 The Best Barnes & Nobel author from the Nordstrom Anniversary
               </span>
-              <p className="text-xs ">
-                By
-                <span className="text-xs ">David Grann</span>
+              <p className="text-xs">
+                By <span> David Grann</span>
               </p>
             </div>
-            <div>
-              <p>History Simply Dosen't Get More Riveting...</p>
-            </div>
+            <p>History Simply Dosen't Get More Riveting...</p>
           </div>
         </div>
-      </div>
-      <div className="pt-4 border-t px-14 ">
-        <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
+      </section>
+      <section className="pt-4 border-t px-10 text-justify md:px-28">
+        <div className="flex flex-col gap-4 md:flex-row">
           <LazyLoadImage
-            src={author}
-            alt="author"
-            className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start "
+            src={author} alt="author"
+            className="self-center w-20 h-20 border rounded-3xl md:justify-self-start "
           />
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold">David Grann</h4>
             <p>
-              Sed non nibh iaculis, posuere diam vitae, consectetur neque.
-              Integer velit ligula, semper sed nisl in, cursus commodo elit.
-              Pellentesque sit amet mi luctus ligula euismod lobortis ultricies
-              et nibh.
+              Reading of civilization; it’s one of the greatest acts of civilization it takes the free raw material of the mind
+            no matter the size. But the more lost you are, the more things you’ll find.
             </p>
           </div>
         </div>
-        <div className="flex justify-center pt-4 space-x-4 align-center">
-          <span className="p-2 rounded-md">
-            <FaGithub className="w-4 h-4" />
-          </span>
-          <span className="p-2 rounded-md ">
-            <FaDribbble className="w-4 h-4" />
-          </span>
-          <span className="p-2 rounded-md ">
-            <FaTwitter className="w-4 h-4" />
-          </span>
-          <span className="p-2 rounded-md ">
-            <FaEnvelope className="w-4 h-4" />
-          </span>
-        </div>
-      </div>
+        <Socials size={15}/>
+      </section>
     </Section>
   );
 };

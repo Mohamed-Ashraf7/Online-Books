@@ -11,9 +11,6 @@ module.exports = {
           max: "768px",
         },
       },
-      fontFamily: {
-        primary: ["Playfair"],
-      },
     },
   },
   plugins: [],

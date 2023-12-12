@@ -1,17 +1,12 @@
-import Footer from "./layouts/Footer";
-import Header from "./layouts/header/Header";
+import { lazy } from "react";
 import { Toast } from "./utils/Toast";
-import Routing from "./layouts/Routing";
 import ModalManger from "./utils/ModalManger";
-import { useSelector } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import Header from "./layouts/header/Header";
+import Footer from "./layouts/Footer" ;
+const Routing = lazy(() => import("./layouts/Routing"));
+
 function App() {
-  const { isOpen } = useSelector((state) => state.modalSlice);
-  if (isOpen) {
-    document.body.style.overflowY = "hidden";
-  } else {
-    document.body.style.overflowY = "scroll";
-  }
   return (
     <BrowserRouter>
       <Toast />

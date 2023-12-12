@@ -1,4 +1,3 @@
-
 import { closeModal } from "../store/modalSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "../components/Modal";
@@ -20,8 +19,7 @@ const ModalManger = () => {
     const Selected = Data[componentName];
     if (Selected) {
       Renderd = <Selected {...Props} />;
-    }
-  }
+    }}
   return (
     <Modal handle={handleClose} isOpen={isOpen}>
       {Renderd}
