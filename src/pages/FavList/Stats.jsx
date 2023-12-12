@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { MdOutlineFolderShared } from "react-icons/md";
 import { FaRegFaceSmileBeam } from "react-icons/fa6";
 import { IoSpeedometerOutline } from "react-icons/io5";
@@ -19,8 +18,8 @@ const State = ({icon,num,word}) => {
 }
 const Stats = () => {
   return (
-     <section className="px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
+     <section className="px-6 my-2">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-6 mx-auto">
             <State
               icon={<MdOutlineFolderShared size={47} />}
               num={"200"} word={"Orders"}/>

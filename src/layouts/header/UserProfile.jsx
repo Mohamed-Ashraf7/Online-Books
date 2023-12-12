@@ -25,7 +25,7 @@ function Profile() {
           </div>
       </div>
       {profileOpen && (
-        <div className="absolute py-1 -left-[30%] mt-[18px] w-48 rounded-lg shadow-lg bg-white mobile:centerd">
+        <div className="absolute py-1 -left-[30%] md:mt-[18px] w-48 rounded-lg shadow-lg bg-white mobile:centerd">
           <div className="py-3">
             <button type="button" onClick={closeProfile}  aria-label="close"
               className="w-full px-4 py-2 text-sm  hover:bg-gray-100 flex items-center gap-2 

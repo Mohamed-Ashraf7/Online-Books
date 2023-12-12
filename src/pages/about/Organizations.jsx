@@ -5,13 +5,13 @@ import { TbBrandYahoo } from "react-icons/tb";
 import { FaFirefox, FaYoutube } from "react-icons/fa6";
 const Organizations = () => {
   return (
-    <section className="p-4 md:pb-10">
+    <section className="p-2 md:pb-10">
        <h4 className="text-4xl font-semibold pb-4 mx-auto text-center">Trusted by the World's Engines </h4>
       <div className="my-4 grid grid-cols-4 gap-y-8">
+        <TfiMicrosoftAlt size={45} className="place-self-center" />
         <FaAmazon size={55} className="place-self-center" />
-        <FaApple size={55} className="place-self-center" />
+        <FaApple size={60} className="place-self-center" />
         <FaGoogle size={55} className="place-self-center" />
-        <TfiMicrosoftAlt size={55} className="place-self-center" />
         <TbBrandYahoo size={55} className="place-self-center" />
         <FaInternetExplorer size={55} className="place-self-center" />
         <FaFirefox size={55} className="place-self-center" />
